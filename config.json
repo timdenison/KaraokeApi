@@ -1,0 +1,6 @@
+{
+    "ConnectionStrings": {  
+        "DataAccessMySqlProvider": "server=localhost;userid=admin;password=1234;database=karaoke;"
+        }
+    
+}

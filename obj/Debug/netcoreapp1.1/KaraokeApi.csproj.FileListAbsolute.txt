@@ -1,0 +1,16 @@
+/Users/timdenison/Development/KaraokeApi/bin/Debug/netcoreapp1.1/KaraokeApi.deps.json
+/Users/timdenison/Development/KaraokeApi/bin/Debug/netcoreapp1.1/KaraokeApi.runtimeconfig.json
+/Users/timdenison/Development/KaraokeApi/bin/Debug/netcoreapp1.1/KaraokeApi.runtimeconfig.dev.json
+/Users/timdenison/Development/KaraokeApi/bin/Debug/netcoreapp1.1/KaraokeApi.dll
+/Users/timdenison/Development/KaraokeApi/bin/Debug/netcoreapp1.1/KaraokeApi.pdb
+/Users/timdenison/Development/KaraokeApi/obj/Debug/netcoreapp1.1/KaraokeApi.AssemblyInfo.cs
+/Users/timdenison/Development/KaraokeApi/obj/Debug/netcoreapp1.1/KaraokeApi.dll
+/Users/timdenison/Development/KaraokeApi/obj/Debug/netcoreapp1.1/KaraokeApi.pdb
+/Users/timdenison/Development/extra-curricular/KaraokeApi/bin/Debug/netcoreapp1.1/KaraokeApi.deps.json
+/Users/timdenison/Development/extra-curricular/KaraokeApi/bin/Debug/netcoreapp1.1/KaraokeApi.runtimeconfig.json
+/Users/timdenison/Development/extra-curricular/KaraokeApi/bin/Debug/netcoreapp1.1/KaraokeApi.runtimeconfig.dev.json
+/Users/timdenison/Development/extra-curricular/KaraokeApi/bin/Debug/netcoreapp1.1/KaraokeApi.dll
+/Users/timdenison/Development/extra-curricular/KaraokeApi/bin/Debug/netcoreapp1.1/KaraokeApi.pdb
+/Users/timdenison/Development/extra-curricular/KaraokeApi/obj/Debug/netcoreapp1.1/KaraokeApi.AssemblyInfo.cs
+/Users/timdenison/Development/extra-curricular/KaraokeApi/obj/Debug/netcoreapp1.1/KaraokeApi.dll
+/Users/timdenison/Development/extra-curricular/KaraokeApi/obj/Debug/netcoreapp1.1/KaraokeApi.pdb
