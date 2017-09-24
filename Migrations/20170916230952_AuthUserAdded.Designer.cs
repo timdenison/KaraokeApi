@@ -8,9 +8,10 @@ using KaraokeApi.Models;
 namespace KaraokeApi.Migrations
 {
     [DbContext(typeof(KaraokeContext))]
-    partial class KaraokeContextModelSnapshot : ModelSnapshot
+    [Migration("20170916230952_AuthUserAdded")]
+    partial class AuthUserAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
@@ -49,8 +50,6 @@ namespace KaraokeApi.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<bool>("IsComplete");
-
-                    b.Property<int>("Order");
 
                     b.Property<int>("SessionId");
 

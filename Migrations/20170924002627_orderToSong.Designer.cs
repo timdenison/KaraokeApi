@@ -8,9 +8,10 @@ using KaraokeApi.Models;
 namespace KaraokeApi.Migrations
 {
     [DbContext(typeof(KaraokeContext))]
-    partial class KaraokeContextModelSnapshot : ModelSnapshot
+    [Migration("20170924002627_orderToSong")]
+    partial class orderToSong
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");

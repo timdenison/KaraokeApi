@@ -14,13 +14,13 @@ namespace TodoApi.Controllers
         {
             _context = context;
         }
-
-        [HttpPost]
-        public void Get()
+        [HttpGet("{stupidId}")]
+        public List<Song> GetSessionSongs(int stupidId)
         {
-
+            return _context.Songs.Where(s => s.SessionId == stupidId).OrderBy(s => s.Order).ToList();
         }
-        [HttpPost]
+
+        [HttpPut]
         public void AddSongToSession([FromBody]Song userSong)
         {
             _context.Add(userSong);

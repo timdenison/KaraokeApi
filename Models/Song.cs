@@ -10,6 +10,7 @@ namespace KaraokeApi.Models
         public string StageName { get; set; }
         public string Url { get; set; }
         public string Title {get; set; }
+        public int Order { get; set; }
         public bool IsComplete { get; set; }
         public int SessionId {get; set;}
     }

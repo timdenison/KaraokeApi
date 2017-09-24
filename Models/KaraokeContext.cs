@@ -13,6 +13,8 @@ namespace KaraokeApi.Models
         public DbSet<Song> Songs { get; set; }
         public DbSet<KaraokeSession> Sessions {get; set; }
         public DbSet<StageName> StageNames {get;set;}
+        public DbSet<AdminUser> AdminUsers {get;set;}
+        
 
     }
 }
