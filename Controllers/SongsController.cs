@@ -14,10 +14,10 @@ namespace TodoApi.Controllers
         {
             _context = context;
         }
-        [HttpGet("{stupidId}")]
-        public List<Song> GetSessionSongs(int stupidId)
+        [HttpGet("{sessionId}")]
+        public List<Song> GetSessionSongs(int sessionId)
         {
-            return _context.Songs.Where(s => s.SessionId == stupidId).OrderBy(s => s.Order).ToList();
+            return _context.Songs.Where(s => s.SessionId == sessionId).OrderBy(s => s.Order).ToList();
         }
 
         [HttpPut]
@@ -26,7 +26,11 @@ namespace TodoApi.Controllers
             _context.Add(userSong);
             _context.SaveChanges();
         }
-        
+        [HttpPost]
+        public void ChangeSongOrder([FromBody]IEnumerable<Song> songs)
+        {
+
+        }
                
     }
 }
