@@ -20,17 +20,13 @@ namespace TodoApi.Controllers
             return _context.Songs.Where(s => s.SessionId == sessionId).OrderBy(s => s.Order).ToList();
         }
 
-        [HttpPut]
+        [HttpPost]
         public void AddSongToSession([FromBody]Song userSong)
         {
             _context.Add(userSong);
             _context.SaveChanges();
         }
-        [HttpPost]
-        public void ChangeSongOrder([FromBody]IEnumerable<Song> songs)
-        {
 
-        }
                
     }
 }
