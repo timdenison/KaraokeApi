@@ -23,6 +23,9 @@ namespace TodoApi.Controllers
         [HttpPost]
         public void AddSongToSession([FromBody]Song userSong)
         {
+            var highestOrderSong = _context.Songs.Where(s => s.SessionId == userSong.SessionId).OrderByDescending(s => s.Order).FirstOrDefault();
+            var newSongOrder = highestOrderSong.Order + 1;
+            userSong.Order = newSongOrder;
             _context.Add(userSong);
             _context.SaveChanges();
         }
