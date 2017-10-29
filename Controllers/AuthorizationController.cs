@@ -21,11 +21,13 @@ namespace TodoApi.Controllers
         public IActionResult Authorize([FromBody]AdminUser potentialAdminUser)
         {
             bool authorized = false;
+
+            var test = _context.AdminUsers.ToList();
             
             if(_context.AdminUsers.Where(u => u.UserName == potentialAdminUser.UserName && u.Password == potentialAdminUser.Password).ToList().Count > 0){
                 authorized = true;
             }
-
+            
             return Ok(new {userIsAdmin =  authorized});
         }
         

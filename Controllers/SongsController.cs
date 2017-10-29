@@ -24,12 +24,20 @@ namespace TodoApi.Controllers
         public void AddSongToSession([FromBody]Song userSong)
         {
             var highestOrderSong = _context.Songs.Where(s => s.SessionId == userSong.SessionId).OrderByDescending(s => s.Order).FirstOrDefault();
-            var newSongOrder = highestOrderSong.Order + 1;
+            var newSongOrder = 0;
+            if(highestOrderSong != null){newSongOrder = highestOrderSong.Order + 1; }
             userSong.Order = newSongOrder;
             _context.Add(userSong);
             _context.SaveChanges();
         }
-
+        
+        [HttpDelete("{songId}")]
+        public void DeleteSongFromSession(int songId)
+        {
+            var songToDelete = _context.Songs.Where(s => s.Id == songId).FirstOrDefault();
+            _context.Remove(songToDelete);
+            _context.SaveChanges();
+        }
                
     }
 }

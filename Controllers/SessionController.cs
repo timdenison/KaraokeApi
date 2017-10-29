@@ -38,36 +38,32 @@ namespace KaraokeApi.Controllers
             return Ok(new { sessionId = _karaokeSessionId });
         }
         
-        [HttpPut]
-        public int CreateNewSession(string sessionName)
+        [HttpPost]
+        public IActionResult CreateNewSessionIfNoneActive()
         {
-            try
+            bool activeSessionExists = _context.Sessions.Where(s => s.IsActive).Count() > 0;
+            if(activeSessionExists){
+                int existingSessionId = _context.Sessions.Where(s => s.IsActive).OrderByDescending(s => s.KaraokeSessionId).Select(s => s.KaraokeSessionId).FirstOrDefault();
+                return Ok(new {sessionId = existingSessionId});
+            }
+            else
             {
-                var newKaraokeSession = new KaraokeSession { IsActive = true,  SessionName = sessionName};
-                _context.Sessions.Add(newKaraokeSession);
+                try
+                {
+                    var newKaraokeSession = new KaraokeSession { IsActive = true,  SessionName = "Beaudry Karaoke Session"};
+                    _context.Sessions.Add(newKaraokeSession);
+                    _context.SaveChanges();
 
-                
-
-                //go through and make sure all other sessions are deactivated?
-
-
-                // var newSong1 = new Song { Url = "www.youtube.com/test", StageName = "Peaches", Title = "This Test Song", IsComplete = false };
-                // var newSong2 = new Song { Url = "www.youtube.com/test2", StageName = "Cream", Title = "This Test Song2", IsComplete = false };
-                // _context.Songs.Add(newSong1);
-                // _context.Songs.Add(newSong2);
-
-                // _context.SaveChanges();
-                // newSong1.SessionId = newKaraokeSession.KaraokeSessionId;
-                // _context.Songs.Update(newSong1);
-                _context.SaveChanges();
-
-                return newKaraokeSession.KaraokeSessionId;
+                    return Ok(new {sessionId = newKaraokeSession.KaraokeSessionId});
+                }
+                catch
+                {
+                    //placeholder for appropriate response
+                    return Ok(new {sessionId = -1 });
+                }
                 
             }
-            catch
-            {
-                return -1;
-            }
+
         }
             
     }
